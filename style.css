@@ -1,0 +1,345 @@
+/* ==========================
+   VARIABLES CSS
+========================== */
+
+:root {
+    --primary: #0056D2;
+    --secondary: #00AEEF;
+    --white: #FFFFFF;
+    --light: #F5F7FA;
+    --dark: #333333;
+    --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background: var(--white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    color: var(--primary);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: var(--dark);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    background: var(--light);
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: grid;
+    gap: 40px;
+}
+
+.hero-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.about-grid article {
+    background: white;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+}
+
+/* ==========================
+   SERVICES
+========================== */
+
+.services {
+    background: var(--light);
+}
+
+.services-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats {
+    background: var(--primary);
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 25px;
+    text-align: center;
+}
+
+.stats h3 {
+    font-size: 2.5rem;
+}
+
+/* ==========================
+   TEMOIGNAGES
+========================== */
+
+.testimonial-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.testimonial {
+    background: white;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    background: #111827;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer hr {
+    margin: 20px 0;
+}
+
+.copyright {
+    text-align: center;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+.card,
+.testimonial,
+.about-grid article {
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================
+   TABLETTE
+========================== */
+
+@media (min-width: 768px) {
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================
+   DESKTOP
+========================== */
+
+@media (min-width: 1024px) {
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-text h2 {
+        font-size: 3.5rem;
+    }
+
+}
